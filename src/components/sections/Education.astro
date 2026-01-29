@@ -1,0 +1,44 @@
+---
+import EducationCard from '../ui/EducationCard.astro';
+
+interface EducationData {
+    years: string;
+    degree: string;
+    institution: string;
+    description: string;
+}
+
+interface Props {
+    items: EducationData[];
+}
+
+const { items } = Astro.props;
+---
+
+<section id="education">
+    <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+        <p class="section-number">03 — OPLEIDING</p>
+        <h2 class="section-title reveal">Academische<br>achtergrond</h2>
+    </div>
+
+    <div class="education-grid">
+        {items.map(item => (
+            <EducationCard
+                years={item.years}
+                degree={item.degree}
+                institution={item.institution}
+                description={item.description}
+            />
+        ))}
+    </div>
+</section>
+
+<style>
+    .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+</style>

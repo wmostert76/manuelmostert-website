@@ -1,11 +1,126 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import CustomCursor from '../components/effects/CustomCursor.astro';
+import NoiseOverlay from '../components/effects/NoiseOverlay.astro';
+import Navigation from '../components/sections/Navigation.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Experience from '../components/sections/Experience.astro';
+import Education from '../components/sections/Education.astro';
+import Skills from '../components/sections/Skills.astro';
+import Certificates from '../components/sections/Certificates.astro';
+import Contact from '../components/sections/Contact.astro';
+import Footer from '../components/sections/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Experience data
+const experienceData = [
+    {
+        dateRange: 'NOV 2025 —<br>JAN 2026',
+        title: 'Restaurant Team Member',
+        company: 'Verhage · Parttime',
+        description: 'Werken in een dynamische horeca-omgeving, waar teamwork en klantenservice centraal staan.',
+        tag: 'Hospitality'
+    },
+    {
+        dateRange: 'FEB 2025 —<br>MEI 2025',
+        title: 'Stagiair',
+        company: 'Kassaplan - De retail leverancier · Stage',
+        description: 'Hands-on ervaring opgedaan in de retail sector met focus op klantgerichte oplossingen.',
+        tag: 'Retail'
+    },
+    {
+        dateRange: 'SEP 2024 —<br>FEB 2025',
+        title: 'Graphic Design Intern',
+        company: 'Creative Desk | a co-creation company · Fulltime',
+        description: 'Intensieve stage waar ik mijn designvaardigheden heb ontwikkeld. Gewerkt met Adobe Illustrator en Photoshop aan diverse creatieve projecten.',
+        tag: 'Design'
+    },
+    {
+        dateRange: 'JUN 2022 —<br>NOV 2023',
+        title: 'Stock Clerk',
+        company: 'Albert Heijn · Parttime',
+        description: 'Verantwoordelijk voor voorraadbeheer en het netjes houden van de winkel. Ontwikkelde sterke organisatorische vaardigheden.',
+        tag: 'Retail'
+    }
+];
+
+// Education data
+const educationData = [
+    {
+        years: '2025 — 2029',
+        degree: 'Creative Marketing',
+        institution: 'Hogeschool Rotterdam',
+        description: 'HBO-opleiding gericht op de combinatie van creativiteit en marketing strategieën in het digitale tijdperk.'
+    },
+    {
+        years: '2023 — 2025',
+        degree: 'Graphic Design',
+        institution: 'Grafisch Lyceum Rotterdam',
+        description: 'MBO-opleiding met focus op visuele communicatie, typografie, en digitale designtools.'
+    }
+];
+
+// Skills data
+const skillsData = [
+    {
+        icon: 'Ai',
+        title: 'Adobe Illustrator',
+        description: 'Adobe Certified Associate in Graphic Design & Illustration. Expert in vector graphics en logo design.',
+        certified: true
+    },
+    {
+        icon: 'Ps',
+        title: 'Adobe Photoshop',
+        description: 'Adobe Certified Associate in Visual Design. Vaardig in foto-editing en digitale beeldbewerking.',
+        certified: true
+    },
+    {
+        icon: '◎',
+        title: 'Visual Design',
+        description: 'Sterke basis in typografie, kleurtheorie, en compositie voor effectieve visuele communicatie.'
+    },
+    {
+        icon: '⚡',
+        title: 'Creative Marketing',
+        description: 'Huidige studie combineert creativiteit met strategisch denken voor impactvolle marketing.'
+    }
+];
+
+// Certificates data
+const certificatesData = [
+    {
+        title: 'Adobe Certified Associate in Graphic Design & Illustration Using Adobe Illustrator',
+        issuer: 'Adobe',
+        date: 'Behaald: April 2024'
+    },
+    {
+        title: 'Adobe Certified Associate in Visual Design Using Adobe Photoshop',
+        issuer: 'Adobe',
+        date: 'Behaald: Januari 2024 — Geldig t/m: Januari 2027'
+    }
+];
 ---
 
 <Layout>
-	<Welcome />
+    <CustomCursor />
+    <NoiseOverlay />
+    <Navigation />
+    <Hero />
+    <About />
+    <Experience experiences={experienceData} />
+    <Education items={educationData} />
+    <Skills skills={skillsData} />
+    <Certificates certificates={certificatesData} />
+    <Contact />
+    <Footer />
 </Layout>
+
+<script>
+    import { initCursor } from '../scripts/cursor';
+    import { initReveal } from '../scripts/reveal';
+    import { initSmoothScroll } from '../scripts/smoothScroll';
+
+    initCursor();
+    initReveal();
+    initSmoothScroll();
+</script>

@@ -1,0 +1,108 @@
+---
+// Contact section component
+---
+
+<section id="contact">
+    <div class="contact-content">
+        <h2 class="contact-title reveal">
+            Laten we<br><span>samenwerken</span>
+        </h2>
+        <p class="contact-text reveal">
+            Op zoek naar een gemotiveerde designer met frisse ideeën?
+            Ik sta open voor nieuwe kansen en uitdagende projecten.
+        </p>
+
+        <div class="contact-info reveal">
+            <div class="contact-item">
+                <p class="contact-item-label">Locatie</p>
+                <p class="contact-item-value">Nieuwerkerk aan den IJssel</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-item-label">LinkedIn</p>
+                <p class="contact-item-value">
+                    <a href="https://www.linkedin.com/in/manuel-mostert-817b52255/" target="_blank">Manuel Mostert</a>
+                </p>
+            </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/manuel-mostert-817b52255/" target="_blank" class="btn btn-primary reveal">
+            Verbind op LinkedIn
+        </a>
+    </div>
+</section>
+
+<style>
+    #contact {
+        background: linear-gradient(180deg, var(--dark) 0%, var(--secondary) 100%);
+        text-align: center;
+    }
+
+    .contact-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .contact-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-title span {
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .contact-text {
+        font-size: 1rem;
+        color: rgba(250, 250, 250, 0.6);
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+
+    .contact-item {
+        text-align: center;
+    }
+
+    .contact-item-label {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-item-value {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .contact-item-value a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-item-value a:hover {
+        color: var(--primary);
+    }
+
+    @media (max-width: 968px) {
+        .contact-info {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+</style>

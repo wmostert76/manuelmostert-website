@@ -1,0 +1,47 @@
+---
+import TimelineItem from '../ui/TimelineItem.astro';
+
+interface ExperienceData {
+    dateRange: string;
+    title: string;
+    company: string;
+    description: string;
+    tag: string;
+}
+
+interface Props {
+    experiences: ExperienceData[];
+}
+
+const { experiences } = Astro.props;
+---
+
+<section id="experience">
+    <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+        <p class="section-number">02 — WERKERVARING</p>
+        <h2 class="section-title reveal">Mijn professionele<br>reis</h2>
+    </div>
+
+    <div class="timeline">
+        {experiences.map(exp => (
+            <TimelineItem
+                dateRange={exp.dateRange}
+                title={exp.title}
+                company={exp.company}
+                description={exp.description}
+                tag={exp.tag}
+            />
+        ))}
+    </div>
+</section>
+
+<style>
+    #experience {
+        background: linear-gradient(180deg, var(--dark) 0%, var(--secondary) 50%, var(--dark) 100%);
+    }
+
+    .timeline {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+</style>

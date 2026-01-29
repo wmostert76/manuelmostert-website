@@ -1,0 +1,104 @@
+---
+interface Props {
+    dateRange: string;
+    title: string;
+    company: string;
+    description: string;
+    tag: string;
+}
+
+const { dateRange, title, company, description, tag } = Astro.props;
+---
+
+<div class="timeline-item reveal">
+    <div class="timeline-date" set:html={dateRange}></div>
+    <div class="timeline-content">
+        <h3>{title}</h3>
+        <h4>{company}</h4>
+        <p>{description}</p>
+        <span class="timeline-tag">{tag}</span>
+    </div>
+</div>
+
+<style>
+    .timeline-item {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 3rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid rgba(255, 77, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .timeline-item:hover {
+        padding-left: 1rem;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 170px;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover::before {
+        transform: translateY(-50%) scale(1.5);
+        box-shadow: 0 0 20px var(--primary);
+    }
+
+    .timeline-date {
+        font-size: 0.75rem;
+        color: var(--primary);
+        letter-spacing: 0.1em;
+    }
+
+    .timeline-content h3 {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.85rem;
+        color: rgba(250, 250, 250, 0.5);
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+        color: rgba(250, 250, 250, 0.6);
+        line-height: 1.8;
+    }
+
+    .timeline-tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(255, 77, 0, 0.1);
+        border-radius: 2px;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 968px) {
+        .timeline-item {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .timeline-item::before {
+            display: none;
+        }
+    }
+</style>

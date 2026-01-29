@@ -1,0 +1,73 @@
+---
+interface Props {
+    title: string;
+    issuer: string;
+    date: string;
+}
+
+const { title, issuer, date } = Astro.props;
+---
+
+<div class="certificate-card reveal">
+    <div class="certificate-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="certificate-content">
+        <h3>{title}</h3>
+        <p>{issuer}</p>
+        <span class="certificate-date">{date}</span>
+    </div>
+</div>
+
+<style>
+    .certificate-card {
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+        border: 1px solid rgba(255, 77, 0, 0.2);
+        padding: 2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .certificate-card:hover {
+        transform: translateX(10px);
+        border-color: var(--primary);
+    }
+
+    .certificate-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 77, 0, 0.1);
+        border: 1px solid var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .certificate-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--primary);
+    }
+
+    .certificate-content h3 {
+        font-family: 'Syne', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+
+    .certificate-content p {
+        font-size: 0.8rem;
+        color: rgba(250, 250, 250, 0.5);
+        margin-bottom: 0.5rem;
+    }
+
+    .certificate-date {
+        font-size: 0.7rem;
+        color: var(--accent);
+    }
+</style>

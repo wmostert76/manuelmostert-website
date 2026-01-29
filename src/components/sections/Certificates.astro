@@ -1,0 +1,47 @@
+---
+import CertificateCard from '../ui/CertificateCard.astro';
+
+interface CertificateData {
+    title: string;
+    issuer: string;
+    date: string;
+}
+
+interface Props {
+    certificates: CertificateData[];
+}
+
+const { certificates } = Astro.props;
+---
+
+<section id="certificates">
+    <div class="section-header" style="text-align: center; max-width: 600px; margin: 4rem auto;">
+        <p class="section-number">05 — CERTIFICATEN</p>
+        <h2 class="section-title reveal">Officiële<br>erkenningen</h2>
+    </div>
+
+    <div class="certificates-grid">
+        {certificates.map(cert => (
+            <CertificateCard
+                title={cert.title}
+                issuer={cert.issuer}
+                date={cert.date}
+            />
+        ))}
+    </div>
+</section>
+
+<style>
+    #certificates {
+        background: var(--dark);
+        padding-top: 0;
+    }
+
+    .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+</style>

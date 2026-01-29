@@ -1,0 +1,53 @@
+---
+import SkillCard from '../ui/SkillCard.astro';
+
+interface SkillData {
+    icon: string;
+    title: string;
+    description: string;
+    certified?: boolean;
+}
+
+interface Props {
+    skills: SkillData[];
+}
+
+const { skills } = Astro.props;
+---
+
+<section id="skills">
+    <div class="skills-container">
+        <div class="section-header" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+            <p class="section-number">04 — VAARDIGHEDEN</p>
+            <h2 class="section-title reveal">Tools &<br>Expertise</h2>
+        </div>
+
+        <div class="skills-grid">
+            {skills.map(skill => (
+                <SkillCard
+                    icon={skill.icon}
+                    title={skill.title}
+                    description={skill.description}
+                    certified={skill.certified}
+                />
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    #skills {
+        background: var(--dark);
+    }
+
+    .skills-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+</style>

@@ -1,0 +1,146 @@
+---
+// Hero section component
+---
+
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="float-element float-1"></div>
+    <div class="float-element float-2"></div>
+
+    <div class="hero-content">
+        <span class="hero-tag">Graphic Design Student</span>
+        <h1>
+            Manuel
+            <span>Mostert</span>
+        </h1>
+        <p class="hero-subtitle">
+            Creative designer in opleiding met hands-on ervaring in Adobe Illustrator & Photoshop.
+            Passie voor visuele communicatie en marketing.
+        </p>
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Neem contact op</a>
+            <a href="#experience" class="btn btn-secondary">Bekijk mijn werk</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 3rem 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        right: -20%;
+        width: 70%;
+        height: 100%;
+        background: var(--gradient-1);
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 0.08;
+        animation: pulse 8s ease-in-out infinite;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 77, 0, 0.1);
+        border: 1px solid var(--primary);
+        border-radius: 2px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--primary);
+        margin-bottom: 2rem;
+        animation: slideIn 0.8s ease forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .hero h1 {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(3rem, 10vw, 7rem);
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+        animation: slideIn 0.8s ease 0.2s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .hero h1 span {
+        display: block;
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        color: rgba(250, 250, 250, 0.6);
+        max-width: 500px;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        animation: slideIn 0.8s ease 0.4s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .hero-cta {
+        display: flex;
+        gap: 1rem;
+        animation: slideIn 0.8s ease 0.6s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    /* Floating Elements */
+    .float-element {
+        position: absolute;
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .float-1 {
+        width: 300px;
+        height: 300px;
+        background: var(--gradient-2);
+        top: 20%;
+        right: 10%;
+        opacity: 0.1;
+        animation-delay: 0s;
+    }
+
+    .float-2 {
+        width: 150px;
+        height: 150px;
+        background: var(--primary);
+        bottom: 20%;
+        right: 25%;
+        opacity: 0.15;
+        animation-delay: 2s;
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-cta {
+            flex-direction: column;
+        }
+    }
+</style>
