@@ -1,81 +1,66 @@
-# Manuel Mostert - Portfolio Website
+# 🎨 Manuel Mostert Portfolio
 
-A modern, minimalist portfolio website showcasing creative design work, experience, and professional certifications. Built with Astro for blazing-fast performance and smooth user experience.
+> Modern portfolio website showcasing creative design work | Built with Astro | Blazing-fast performance
 
-## Features
+Een moderne, minimalistische portfolio website voor creatief design werk, ervaring en professionele certificeringen.
+
+## ✨ Features
 
 ### Visual Design
-- **Custom Cursor Effect** - Interactive cursor that follows mouse movement
-- **Noise Overlay** - Subtle film grain texture for depth
-- **Smooth Scroll** - Buttery smooth navigation between sections
-- **Gradient Animations** - Eye-catching animated gradients and floating elements
-- **Responsive Design** - Optimized for all screen sizes
+- **Custom Cursor Effect** - Interactieve cursor die muisbewegingen volgt
+- **Noise Overlay** - Subtiele film grain texture voor diepte
+- **Smooth Scroll** - Vloeiende navigatie tussen secties
+- **Gradient Animations** - Geanimeerde gradiënten en floating elementen
+- **Responsive Design** - Geoptimaliseerd voor alle schermformaten
 
-### Content Sections
-- **Hero** - Bold introduction with animated text and call-to-action
-- **About** - Personal introduction and background
-- **Experience** - Professional work history with timeline
-- **Education** - Academic background and qualifications
-- **Skills** - Technical proficiencies with certification badges
-- **Certificates** - Adobe Certified Associate credentials
-- **Contact** - Get in touch section
-- **Footer** - Social links and additional information
+### Content Secties
+| Sectie | Beschrijving |
+|--------|--------------|
+| **Hero** | Bold introductie met geanimeerde tekst |
+| **About** | Persoonlijke introductie en achtergrond |
+| **Experience** | Professionele werkervaring met timeline |
+| **Education** | Academische achtergrond |
+| **Skills** | Technische vaardigheden met badges |
+| **Certificates** | Adobe Certified Associate credentials |
+| **Contact** | Contact sectie |
 
-## Tech Stack
-
-- **Framework**: [Astro](https://astro.build) - Ship less JavaScript, faster sites
-- **Styling**: Custom CSS with modern design patterns
-- **Typography**: Syne font family for bold, modern headings
-- **Animations**: CSS animations and transitions
-- **Build Tool**: Bun for fast package management and builds
-
-## Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ or Bun
+- Node.js 18+ of Bun
 - Git
 
-### Installation
+### Installatie
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/wmostert76/manuelmostert-website.git
-
-# Navigate to project directory
 cd manuelmostert-website
 
 # Install dependencies
 bun install
-# or
+# of
 npm install
 ```
 
 ### Development
 
 ```bash
-# Start development server
 bun run dev
-# or
+# of
 npm run dev
 ```
 
-Visit `http://localhost:4321` to view the site.
+Open `http://localhost:4321`
 
-### Build for Production
+### Production Build
 
 ```bash
-# Build optimized site
 bun run build
-# or
-npm run build
-
-# Preview production build
 bun run preview
-# or
-npm run preview
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 manuelmostert-website/
@@ -90,39 +75,39 @@ manuelmostert-website/
 │   ├── scripts/         # Client-side JavaScript
 │   └── styles/          # Global styles
 ├── astro.config.mjs     # Astro configuration
-└── package.json         # Dependencies and scripts
+└── package.json
 ```
 
-## Certifications Featured
+## 🏆 Certificeringen
 
-- **Adobe Certified Associate in Graphic Design & Illustration** (Adobe Illustrator) - April 2024
-- **Adobe Certified Associate in Visual Design** (Adobe Photoshop) - January 2024
+- **Adobe Certified Associate in Graphic Design & Illustration** (Illustrator) - April 2024
+- **Adobe Certified Associate in Visual Design** (Photoshop) - January 2024
 
-## Performance
+## ⚡ Performance
 
-Built with performance in mind:
 - Zero JavaScript frameworks on initial load
 - Minimal bundle size
 - Fast Time to Interactive (TTI)
 - Optimized images and assets
-- Static site generation for instant page loads
+- Static site generation
 
-## Browser Support
+## 🛠️ Tech Stack
 
-Modern browsers including:
+| Technology | Purpose |
+|------------|---------|
+| **Astro** | Framework - Ship less JavaScript |
+| **Custom CSS** | Modern design patterns |
+| **Syne** | Typography - Bold, modern headings |
+| **Bun** | Fast package management |
+
+## 🌐 Browser Support
+
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## License
+## 📄 License
 
 © 2025 Manuel Mostert. All rights reserved.
 
-## Contact
-
-For inquiries, collaborations, or opportunities, visit the contact section on the website.
-
----
-
-Built with passion by Manuel Mostert
